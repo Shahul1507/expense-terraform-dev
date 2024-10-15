@@ -33,7 +33,8 @@ module "frontend_sg" {
     sg_tags = var.frontend_sg_tags
 }
 module "bastion_sg" {
-    source = "../../terraform-aws-security-group"
+    #source = "../../terraform-aws-security-group"
+    source = "git::https://github.com/Shahul1507/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "bastion"
@@ -43,7 +44,8 @@ module "bastion_sg" {
 }
 
 module "ansible_sg" {
-    source = "../../terraform-aws-security-group"
+    #source = "../../terraform-aws-security-group"
+    source = "git::https://github.com/Shahul1507/terraform-aws-security-group.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "ansible"
